@@ -23,7 +23,7 @@ function leftSlide() {
         counterSlides = allElements.length;
         document.getElementById("slider-img").src = `${allElements[counterSlides-1]}`;
     }
-};
+}
 document.getElementsByClassName("pos-slider-class-right")[0].addEventListener("click", rightSlide);
 function rightSlide() {
     if (counterSlides < allElements.length-1) {
