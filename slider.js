@@ -1,6 +1,9 @@
-let allElements = ['./s.jpg', './p.jpg', './f.jpg', './d.jpg']
+let allElements = []
 let counterSlides = 0;
 let speedAutoSlide = 5000;
+for(let i=0;i<document.getElementsByClassName("files-slider").length;i++){
+allElements.unshift(document.getElementsByClassName("files-slider")[i].src)
+}
 setInterval(() => {
     if (counterSlides < allElements.length) {
         document.getElementById("slider-img").src = `${allElements[counterSlides]}`;
@@ -22,19 +25,12 @@ function leftSlide() {
     }
 };
 document.getElementsByClassName("pos-slider-class-right")[0].addEventListener("click", rightSlide);
-document.getElementById("blyat").addEventListener("click", rightSlide);
-
-
 function rightSlide() {
-    if (counterSlides < allElements.length) {
-        console.log("b",counterSlides)
+    if (counterSlides < allElements.length-1) {
+        counterSlides++;
         document.getElementById("slider-img").src = allElements[counterSlides];
-        counterSlides+=1;
     } else {
-            console.log("m")
-            counterSlides = 0;
-            document.getElementById("slider-img").src = `${allElements[0]}`;
-        }
+        counterSlides =  0;
+        document.getElementById("slider-img").src = allElements[counterSlides];
+    }
 }
-//if(counterSlides < allElements.length) {document.getElementById("slider-img").src = `${allElements[counterSlides]}`;counterSlides++;}else{counterSlides = 0;document.getElementById("slider-img").src = `${allElements[0]}`;}
-//{if(counterSlides > 0) {counterSlides--;document.getElementById("slider-img").src = `${allElements[counterSlides]}`;console.log("1")}else{counterSlides = allElements.length;document.getElementById("slider-img").src = `${allElements[counterS
