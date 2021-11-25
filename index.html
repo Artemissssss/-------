@@ -10,7 +10,7 @@
 
 <body>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
         #slider-cont {
             width: 600px;
@@ -20,38 +20,43 @@
 
         .pos-slider-class::after {
             content: '<';
+            width: 40px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(44, 44, 44, 0.5);
+            border: none;
+            color: white;
+            font-family: 'Comfortaa', cursive;
+            font-size: 44px;
             position: absolute;
             text-align: center;
             top: 50%;
             left: 0;
             transform: translateY(-50%);
-            background-color: rgba(44, 44, 44, 0.5);
-            width: 40px;
-            height: 70px;
-            border: none;
-            color: white;
-            font-family: "Roboto", sans-serif;
-            font-size: 40px;
             z-index: 2;
         }
 
         .pos-slider-class-right::after {
             content: '>';
-            text-align: center;
+            width: 40px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(44, 44, 44, 0.5);
+            border: none;
+            color: white;
+            font-family: 'Comfortaa', cursive;
+            font-size: 44px;
             position: absolute;
+            text-align: center;
             top: 50%;
             right: 0;
             transform: translateY(-50%);
-            background-color: rgba(44, 44, 44, 0.5);
-            width: 40px;
-            height: 70px;
-            border: none;
-            color: white;
-            font-family: "Roboto", sans-serif;
-            font-size: 40px;
-            z-index: 1000000000000000000;
+            z-index: 3;
         }
-
 
         #slider-img {
             width: 600px;
@@ -62,21 +67,25 @@
         #pos-slider {
             text-align: center;
         }
-        .files-slider{
-           display: none; 
+
+        .files-slider {
+            display: none;
         }
     </style>
     <div id="slider-cont">
-    <div  class="pos-slider-class">
-        <div class="pos-slider-class-right">
-            <p id="pos-slider"><img src="./d.jpg" alt="slider-img" id="slider-img"></p>
-        <img src="./d.jpg" alt="#" class="files-slider">
-        <img src="./f.jpg" alt="#" class="files-slider">
-        <img src="./p.jpg" alt="#" class="files-slider">
-
+        <div class="pos-slider-class">
+            <div class="pos-slider-class-right">
+                <p id="pos-slider"><img src="./d.jpg" alt="slider-img" id="slider-img"></p>
+                <img src="./d.jpg" alt="#" class="files-slider">
+                <!--Copy this string and put your value -->
+                <img src="./f.jpg" alt="#" class="files-slider">
+                <img src="./p.jpg" alt="#" class="files-slider">
+                <p class="num" style="display: none;"></p>
+                <p class="speed" style="display: none;">1000</p>
+                <!--Please write speed in ms -->
+            </div>
         </div>
     </div>
-</div>
     <script src="./slider.js"></script>
 </body>
 
