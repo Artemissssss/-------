@@ -7,13 +7,62 @@ for (let i = 0; i < document.getElementsByClassName("files-slider").length; i++)
 setInterval(() => {
     let counterSlides = parseInt(document.getElementsByClassName("num")[0].textContent);
     if (allElements.length == 1) {
-        document.getElementById("slider-img").src = allElements[0];
+        let m = 1;
+        for (let i = 0; i <= 500; i += 50) {
+            setTimeout(() => {
+                m -= 0.1
+                document.getElementById("slider-img").style.opacity = m;
+            }, i)
+        }
+        setTimeout(() => {
+            document.getElementById("slider-img").src = allElements[0];
+            for (let i = 0; i <= 500; i += 50) {
+                setTimeout(() => {
+                    m += 0.1
+                    document.getElementById("slider-img").style.opacity = m;
+                }, i)
+            }
+        }, 1000)
     } else if (counterSlides < allElements.length - 1) {
         counterSlides++;
-        document.getElementById("slider-img").src = `${allElements[counterSlides]}`;
+
+        let m = 1;
+        for (let i = 0; i <= 500; i += 50) {
+            setTimeout(() => {
+                m -= 0.1
+                document.getElementById("slider-img").style.opacity = m;
+            }, i)
+        }
+        setTimeout(() => {
+            document.getElementById("slider-img").src = `${allElements[counterSlides]}`;
+          
+            for (let i = 0; i <= 500; i += 50) {
+                setTimeout(() => {
+                    m += 0.1
+                    document.getElementById("slider-img").style.opacity = m;
+                }, i)
+            }
+        }, 1000)
     } else {
         counterSlides = 0;
-        document.getElementById("slider-img").src = `${allElements[0]}`;
+        
+        let m = 1;
+        for (let i = 0; i <= 500; i += 50) {
+            setTimeout(() => {
+                m -= 0.1
+                document.getElementById("slider-img").style.opacity = m;
+            }, i)
+        }
+        setTimeout(() => {
+            document.getElementById("slider-img").src = `${allElements[0]}`;
+           
+            for (let i = 0; i <= 500; i += 50) {
+                setTimeout(() => {
+                    m += 0.1
+                    document.getElementById("slider-img").style.opacity = m;
+                }, i)
+            }
+        }, 1000)
     }
     document.getElementsByClassName("num")[0].textContent = counterSlides;
 }, speedAutoSlide);
