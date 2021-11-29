@@ -15,8 +15,31 @@
         #slider-cont {
             width: 600px;
             height: 400px;
+            display: inline-block;
             position: relative;
             user-select: none;
+        }
+
+        .pos-slider-class-right,
+        .pos-slider-class {
+            display: inline-block;
+            width: 40px;
+            height: 400px;
+            z-index: 10;
+        }
+
+        .pos-slider-class-right {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        .pos-slider-class {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
         }
 
         .pos-slider-class::after {
@@ -77,16 +100,14 @@
         }
     </style>
     <div id="slider-cont">
-        <div class="pos-slider-class">
-            <div class="pos-slider-class-right">
+        <div class="pos-slider-class"></div>
+            <div class="pos-slider-class-right"></div>
                 <p id="pos-slider"><img src="./d.jpg" alt="slider-img" id="slider-img"></p>
                 <img src="./d.jpg" alt="#" class="files-slider">
                 <img src="./f.jpg" alt="#" class="files-slider">
                 <img src="./p.jpg" alt="#" class="files-slider">
                 <p class="num" style="display: none;"></p>
                 <p class="speed" style="display: none;">100000</p>
-            </div>
-        </div>
     </div>
     <script src="./slider.js"></script>
 </body>
